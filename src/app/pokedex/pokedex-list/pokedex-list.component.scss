@@ -1,0 +1,22 @@
+.container-pokedex {
+    margin: 2% 2% 2% 2%;
+}
+
+.flex-card-gap{
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.card-pokedex {
+    width: 180px;
+    height: 180px;
+    margin-right: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.img-pokedex {
+    width: 150px;
+    
+}

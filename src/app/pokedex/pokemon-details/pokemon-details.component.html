@@ -1,0 +1,26 @@
+<div *ngIf="pokemonInfo">
+    <div style="text-align: center;" [class] = "imageBackGroundCssColor">
+        <img [src]="this.data.pokemonEntry.pokemonImage">
+    </div>
+    <h1 style="text-align: center;">
+        {{data.pokemonEntry.pokemon_species?.name?.toUpperCase()}}
+    </h1>
+    <div class="flex-card-row center-fields">
+        <div style="margin-left: 8px;" *ngFor="let item of pokemonInfo.types">
+            <span class="egg-group">
+                {{item.name}}
+            </span>
+            
+        </div>
+    </div>
+
+    <h1 style="margin-top: 32px; text-align: center;">Base Stats</h1>
+
+    <div style="padding-left: 56px; padding-right: 56px; padding-bottom: 12px;">
+        <div style="margin-top: 8px;" *ngFor="let stat of pokemonInfo.pokemonStat">
+            <span>{{stat.name?.toUpperCase()}}</span>
+            <mat-progress-bar class="pokemon-stats-progress-bar" [value]="stat.value"></mat-progress-bar>
+        </div>
+    </div>
+</div>
+

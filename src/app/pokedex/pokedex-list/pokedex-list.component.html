@@ -1,0 +1,23 @@
+<div class="container-pokedex">
+    <h1>
+        {{"Pokedex " + pokedex?.name}}
+    </h1>
+
+    <form *ngIf="!isLoadingResults" [formGroup]="formFilter">
+        <mat-form-field>
+            <mat-label>Pesquise o pokemon</mat-label>
+            <input formControlName="filter" matInput (input)="filterPokedexList()"/>
+          </mat-form-field>
+    </form>
+
+    <div class="flex-card-gap" *ngFor="let item of filteredPokedex">
+        <mat-card class="card-pokedex" (click)="openDetailsPokemon(item)">
+            <span style="text-align: center;">
+                {{item?.pokemon_species?.name}}
+            </span>
+            <div style="text-align: center;">
+                <img class="img-pokedex" [src]="item.pokemonImage">
+            </div>
+        </mat-card>
+    </div>
+</div>
